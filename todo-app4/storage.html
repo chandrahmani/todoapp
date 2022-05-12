@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage</title>
+</head>
+
+<body>
+
+    <input type="text" id="name" />
+    <button id="save">Save</button>
+
+    <h1 id="showName"></h1>
+
+    <script>
+        const nameInput = document.querySelector("#name");
+        const saveBtn = document.querySelector("#save");
+        const title = document.querySelector("#showName");
+
+        title.innerHTML = localStorage.getItem("myName");
+
+        saveBtn.addEventListener("click", function () {
+            title.innerHTML = nameInput.value;
+
+            // local storage /  web storage
+
+            localStorage.setItem("myName", nameInput.value);
+        });
+
+    </script>
+
+</body>
+
+</html>
